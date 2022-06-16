@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/dangki.css">
-<title>Insert title here</title>
+<title>Đăng kí thành viên</title>
 </head>
 <body>
   <div class='container'>
           <form action=""class='card col-10 card1'>
-              <div class='row g-0'>
+              <div class='row col-12' style="position: relative;">
             <div class="col-4 images">
                 <img src="images/background1.jpg" alt="...">
               </div>

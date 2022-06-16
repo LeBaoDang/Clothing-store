@@ -1419,7 +1419,7 @@
 										<button class="btn btn-primary btn-round btn-lg btn-block">Đăng nhập</button>
 										<div class="pull-center">
 											<h6>
-												<a href="#pablo" class="link">Tạo tài khoản</a>
+												<a href="/dangKi" class="link">Tạo tài khoản</a>
 											</h6>
 										</div>
 										<div class="pull-center">
