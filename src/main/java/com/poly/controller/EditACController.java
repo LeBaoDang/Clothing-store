@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -25,6 +26,7 @@ import com.poly.service.ParamService;
 
 @Controller
 public class EditACController {
+	
 @Autowired
 AccountDAO dao;
 
@@ -55,7 +57,7 @@ AccountDAO dao;
 		dao.save(item);
 		return "redirect:/editac/index";
 	}
-
+	
 	// hàm 4
 	@RequestMapping("/editac/update")
 	public String update(Account item) {

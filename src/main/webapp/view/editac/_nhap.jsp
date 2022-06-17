@@ -12,7 +12,7 @@
 									<div class="form-group">
 									<input style="margin-top: 5px ;background: #009879;border-radius: 2px;"
 									 type="file" name="photo" class="form-control-file "
-										id="image" onchange="chooseFile(this)" />
+										id="photo" onchange="chooseFile(this)" />
 								</div>
 							</div>
 						</div>
@@ -38,9 +38,9 @@
 								<small id="videotHid" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
-								<label for="videotitle">Photo</label>
-								<form:input class="form-control" path="photo" placeholder="Category photo?" />
-								<small id="videotHid" class="form-text text-muted"></small>
+								<label for="youtubeid">Photo</label>
+								<form:input class="form-control" path="photo" placeholder="Photo?" />
+								<small id="youtubeIHid" class="form-text text-muted"></small>
 							</div>
 						</div>
 					</div>

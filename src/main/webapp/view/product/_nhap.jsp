@@ -5,7 +5,6 @@
 			<form>
 			<div class="card">
 				<div class="card-body">
-
 					<div class="row">
 						<div class="col-3">
 							<div class="p-3">
@@ -13,9 +12,7 @@
 								<div class="form-group">
 									<input style="margin-top: 10px ;background: #009879;border-radius: 2px;" type="file" name="image" class="form-control-file"
 										id="image" onchange="chooseFile(this)" />
-
 								</div>
-
 							</div>
 						</div>
 						<div class="col-9">

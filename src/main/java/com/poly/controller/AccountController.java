@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,7 @@ public class AccountController {
 	MailerService mailer;
 	@Autowired
 	OrderDAO daoo;
+	Account account = new Account();
 
 	@GetMapping("/account/login")
 	public String login() {
@@ -95,41 +97,22 @@ public class AccountController {
 	public String accountuser(Model model, @PathVariable("username") String username) {
 		Account ac = dao.getOne(username);
 		if (ac.isAdmin()) {
-			session.set("username", ac.getUsername());
-			session.set("password", ac.getPassword());
-			session.set("fullname", ac.getFullname());
-			session.set("email", ac.getEmail());
-			session.set("photo", ac.getPhoto());
-			model.addAttribute("message", session);
+			ac.getUsername();
+			ac.getPhoto();
+			ac.getPassword();
+			ac.getFullname();
+			ac.getEmail();
+			model.addAttribute("user", ac);
 			return "/account/accountuser";
 		} else {
-			session.set("username", ac.getUsername());
-			session.set("password", ac.getPassword());
-			session.set("fullname", ac.getFullname());
-			session.set("email", ac.getEmail());
-			session.set("photo", ac.getPhoto());
-			model.addAttribute("message", session);
+			ac.getUsername();
+			ac.getPhoto();
+			ac.getPassword();
+			ac.getFullname();
+			ac.getEmail();
+			model.addAttribute("user", ac);
 			return "/account/accountuser";
 		}
-	}
-
-	// sửa thông tin cá nhân
-	@RequestMapping("thongtincanhann")
-	public String thongtincanhan(Model model, @RequestParam("username") String username,
-			@RequestParam("password") String passsword, @RequestParam("email") String email,
-			@RequestParam("fullname") String fullname) throws IOException {
-		Account ac = dao.getOne(username);
-		ac.setEmail(email);
-		ac.setFullname(fullname);
-		ac.setPassword(passsword);
-		dao.save(ac);
-		session.set("username", ac.getUsername());
-		session.set("password", ac.getPassword());
-		session.set("fullname", ac.getFullname());
-		session.set("email", ac.getEmail());
-		session.set("photo", ac.getPhoto());
-		model.addAttribute("message", session);
-		return "/account/accountuser";
 	}
 
 	// quenmk
@@ -143,7 +126,7 @@ public class AccountController {
 		if (!dao.existsById(username)) {
 			model.addAttribute("message", "Tài khoản này không tồn tại!");
 		} else {
-			Account ac = dao.getOne(username); 
+			Account ac = dao.getOne(username);
 			String pass = ac.getPassword();
 			String email = ac.getEmail();
 			try {
@@ -157,8 +140,33 @@ public class AccountController {
 		}
 		return "/account/quenmk";
 	}
+
 	@RequestMapping("dangKi")
 	public String Dangki() {
 		return "/account/dangKi";
+	}
+
+	// quản lí profile
+	@RequestMapping("/update/profile")
+	public String UpdateProfile(Model model,@RequestParam("username") String username,@RequestParam("password") String password, @RequestParam("passcu") String passcu,
+			@RequestParam("xacnhanpas") String xacnhanpas, Account ac, BindingResult result,
+			@RequestParam("photo") MultipartFile multipartFile) throws IOException {
+		ac = dao.getOne(username);
+		if (!ac.getPassword().equals(passcu)) {
+			System.out.print("mật khẩu " + ac.getPassword());
+			model.addAttribute("message","mật khẩu không đúng!");
+			return "/account/demo";
+		} else if (!password.equalsIgnoreCase(xacnhanpas)) {
+			model.addAttribute("message","xác nhận mật khẩu không đúng!");
+			return "/account/demo";
+		} else {
+			String filenameString = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+			String uploadDrString = "images/";
+			ac.setPhoto(filenameString);
+			ac.setPassword(password);
+			dao.save(ac);
+			paramService.save(multipartFile, uploadDrString);
+			return "redirect:/accountuser/" + ac.getUsername();
+		}
 	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -165,6 +166,7 @@ background-position
 </style>
 <body>
 	<div class="container">
+	<form:form action="/update/profile" modelAttribute="user"  enctype="multipart/form-data">
 		<div class="row flex-lg-nowrap">
 			<div class="col">
 				<div class="row">
@@ -175,7 +177,7 @@ background-position
 									<div class="row">
 										<div class="col-4">
 											<div class="p-6 images">
-												<img src="/webapp/images/${photo}" alt=""
+												<img src="/webapp/images/${user.photo}" alt=""
 													style="width: 240px" height="300px">
 												<div class="form-group">
 													<input type="file" name="photo" class="form-control-file"
@@ -189,25 +191,27 @@ background-position
 									</ul>
 									<div class="tab-content pt-3">
 										<div class="tab-pane active">
-											<form class="form" action="/thongtincanhan" method="post">
 												<div class="row" id="label">
 													<div class="col">
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																	<label>Full Name: ${fullname}</label>
+																<label id="fullenameID">Fullname</label>
+																<form:input class="form-control" type="text" path="fullname" placeholder="fullname?" />
 																</div>
 															</div>
 															<div class="col">
 																<div class="form-group">
-																	<label name="username">Username: ${username}</label>
+																	<label id="usernameID">Username</label>
+																	<form:input class="form-control" type="text" disabled="false" path="username" name="username" placeholder="username?" />
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																	<label>Email: ${email} </label>
+																<label id="emailID">Email</label>
+																<form:input class="form-control" type="email" path="email" placeholder="Password?" />
 																</div>
 															</div>
 														</div>
@@ -231,16 +235,16 @@ background-position
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																	<label>New Password</label> <input class="form-control"
-																		type="password" name="password" value="${password}">
+																	<label>Current Password</label> 
+																	<input class="form-control" type="password" name="passcu" placeholder="Current Password?" />
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																	<label>New Password</label> <input class="form-control"
-																		type="password" placeholder="">
+																	<label>New Password</label> 
+																	<input class="form-control" type="password" name="password" placeholder="New Password?" />
 																</div>
 															</div>
 														</div>
@@ -249,7 +253,7 @@ background-position
 																<div class="form-group">
 																	<label>Confirm <span class="d-none d-xl-inline">Password</span></label>
 																	<input class="form-control" type="password"
-																		placeholder="">
+																		placeholder="Confirm Password" name="xacnhanpas"/>
 																</div>
 															</div>
 														</div>
@@ -262,8 +266,6 @@ background-position
 															Change</button>
 													</div>
 												</div>
-											</form>
-
 										</div>
 									</div>
 								</div>
@@ -285,6 +287,7 @@ background-position
 				</div>
 			</div>
 		</div>
+		</form:form>
 	</div>
 </body>
 <script type="text/javascript">
