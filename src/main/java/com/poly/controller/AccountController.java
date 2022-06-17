@@ -148,16 +148,17 @@ public class AccountController {
 
 	// quản lí profile
 	@RequestMapping("/update/profile")
-	public String UpdateProfile(Model model,@RequestParam("username") String username,@RequestParam("password") String password, @RequestParam("passcu") String passcu,
+	public String UpdateProfile(Model model, @RequestParam("username") String username,
+			@RequestParam("password") String password, @RequestParam("passcu") String passcu,
 			@RequestParam("xacnhanpas") String xacnhanpas, Account ac, BindingResult result,
 			@RequestParam("photo") MultipartFile multipartFile) throws IOException {
 		ac = dao.getOne(username);
 		if (!ac.getPassword().equals(passcu)) {
 			System.out.print("mật khẩu " + ac.getPassword());
-			model.addAttribute("message","mật khẩu không đúng!");
+			model.addAttribute("message", "mật khẩu không đúng!");
 			return "/account/demo";
 		} else if (!password.equalsIgnoreCase(xacnhanpas)) {
-			model.addAttribute("message","xác nhận mật khẩu không đúng!");
+			model.addAttribute("message", "xác nhận mật khẩu không đúng!");
 			return "/account/demo";
 		} else {
 			String filenameString = StringUtils.cleanPath(multipartFile.getOriginalFilename());

@@ -55,7 +55,6 @@ public class ProductEditController {
 	}
 //EDIT
 // hàm 4
-
 	@GetMapping("/edit/{id}")
 	public String edit(Model model, @PathVariable("id") Integer id) {
 		Product item = dao.findById(id).get();

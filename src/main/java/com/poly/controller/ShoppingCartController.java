@@ -38,11 +38,7 @@ public class ShoppingCartController {
 	OrderDAO orderDao;
 	@Autowired
 	ProductDAO productDao;
-<<<<<<< HEAD
-=======
-	
 
->>>>>>> 7e0b0c3fd0579661fb59e593400ad2094e37ca62
 
 	// 2. xem giỏ hàng
 	@RequestMapping("/cart/view")
@@ -76,10 +72,7 @@ public class ShoppingCartController {
 		return "redirect:/cart/view";
 	}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 7e0b0c3fd0579661fb59e593400ad2094e37ca62
 	// xem chi tiết
 	@RequestMapping("/cart/chitiet/{id}")
 	public String chitiet(@PathVariable("id") Integer id,Model model) {
@@ -87,10 +80,7 @@ public class ShoppingCartController {
 		model.addAttribute("items",PR);
 		return "/home/xemchitiet";
 	}
-	
-<<<<<<< HEAD
-=======
-	
+
 	@RequestMapping("/cart/checkout")
 	public String checkout() {
 		// lấy username để login
@@ -126,6 +116,4 @@ public class ShoppingCartController {
 		return "redirect:/cart/view";
 	}
 
-	
->>>>>>> 7e0b0c3fd0579661fb59e593400ad2094e37ca62
 }
