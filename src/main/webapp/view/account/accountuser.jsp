@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,20 +76,43 @@ keyframes glowing-button-85 { 0% {
 }
 
 50
+
+
 %
 {
 background-position
+
+
 :
-400%
-0;
+
+
+400
+%
+
+
+0
+;
+
+
 }
 100
+
+
 %
 {
 background-position
+
+
 :
+
+
 0
-0;
+
+
+0
+;
+
+
 }
 }
 .button-85:after {
@@ -166,52 +189,57 @@ background-position
 </style>
 <body>
 	<div class="container">
-	<form:form action="/update/profile" modelAttribute="user"  enctype="multipart/form-data">
-		<div class="row flex-lg-nowrap">
-			<div class="col">
-				<div class="row">
-					<div class="col mb-3" id="conten">
-						<div class="card">
-							<div class="card-body">
-								<div class="e-profile">
-									<div class="row">
-										<div class="col-4">
-											<div class="p-6 images">
-												<img src="/webapp/images/${user.photo}" alt=""
-													style="width: 240px" height="300px">
-												<div class="form-group">
-													<input type="file" name="photo" class="form-control-file"
-														id="image" onchange="chooseFile(this)" />
+		<form:form action="/update/profile" modelAttribute="user"
+			enctype="multipart/form-data">
+			<div class="row flex-lg-nowrap">
+				<div class="col">
+					<div class="row">
+						<div class="col mb-3" id="conten">
+							<div class="card">
+								<div class="card-body">
+									<div class="e-profile">
+										<div class="row">
+											<div class="col-4">
+												<div class="p-6 images">
+													<img src="/webapp/images/${user.photo}" alt=""
+														style="width: 240px" height="300px">
+													<div class="form-group">
+														<input type="file" name="photo" class="form-control-file"
+															id="image" onchange="chooseFile(this)" />
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<ul class="nav nav-tabs">
-										<li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
-									</ul>
-									<div class="tab-content pt-3">
-										<div class="tab-pane active">
+										<ul class="nav nav-tabs">
+											<li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
+										</ul>
+										<div class="tab-content pt-3">
+											<div class="tab-pane active">
 												<div class="row" id="label">
 													<div class="col">
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																<label id="fullenameID">Fullname</label>
-																<form:input class="form-control" type="text" path="fullname" placeholder="fullname?" />
+																	<label id="fullenameID">Fullname</label>
+																	<form:input class="form-control" type="text"
+																		path="fullname" placeholder="fullname?" />
 																</div>
 															</div>
 															<div class="col">
 																<div class="form-group">
 																	<label id="usernameID">Username</label>
-																	<form:input class="form-control" type="text" disabled="false" path="username" name="username" placeholder="username?" />
+																	<form:input class="form-control" type="text"
+																		disabled="false" path="username" name="username"
+																		placeholder="username?" />
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																<label id="emailID">Email</label>
-																<form:input class="form-control" type="email" path="email" placeholder="Password?" />
+																	<label id="emailID">Email</label>
+																	<form:input class="form-control" type="email"
+																		path="email" placeholder="Password?" />
 																</div>
 															</div>
 														</div>
@@ -235,16 +263,18 @@ background-position
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																	<label>Current Password</label> 
-																	<input class="form-control" type="password" name="passcu" placeholder="Current Password?" />
+																	<label>Current Password</label> <input
+																		class="form-control" type="password" name="passcu"
+																		placeholder="Current Password?" />
 																</div>
 															</div>
 														</div>
 														<div class="row">
 															<div class="col">
 																<div class="form-group">
-																	<label>New Password</label> 
-																	<input class="form-control" type="password" name="password" placeholder="New Password?" />
+																	<label>New Password</label> <input class="form-control"
+																		type="password" name="password"
+																		placeholder="New Password?" />
 																</div>
 															</div>
 														</div>
@@ -253,7 +283,7 @@ background-position
 																<div class="form-group">
 																	<label>Confirm <span class="d-none d-xl-inline">Password</span></label>
 																	<input class="form-control" type="password"
-																		placeholder="Confirm Password" name="xacnhanpas"/>
+																		placeholder="Confirm Password" name="xacnhanpas" />
 																</div>
 															</div>
 														</div>
@@ -266,27 +296,27 @@ background-position
 															Change</button>
 													</div>
 												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-12 col-md-3 mb-3">
-						<div class="card mb-3">
-							<div class="card-body">
-								<div class="px-xl-3">
-									<button class="button-85" role="button">
-										<i class="fa fa-sign-out"></i> <a href="/home/index">Đăng
-											Xuất</a>
-									</button>
+						<div class="col-12 col-md-3 mb-3">
+							<div class="card mb-3">
+								<div class="card-body">
+									<div class="px-xl-3">
+										<button class="button-85" role="button">
+											<i class="fa fa-sign-out"></i> <a href="/home/index">Đăng
+												Xuất</a>
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		</form:form>
 	</div>
 </body>
