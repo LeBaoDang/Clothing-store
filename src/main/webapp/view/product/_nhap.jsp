@@ -18,12 +18,12 @@
 						<div class="col-9">
 							<div class="form-group">
 								<label for="youtubeid">Product name</label>
-								<form:input class="form-control" path="name" placeholder="Category name?" />
+								<form:input class="form-control" path="name" placeholder="Products name?" />
 								<small id="youtubeIHid" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
 								<label for="videotitle">Product price</label>
-								<form:input class="form-control" path="price" placeholder="Category price?" />
+								<form:input class="form-control" path="price" placeholder="Products price?" />
 								<small id="videotHid" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">

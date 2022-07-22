@@ -19,22 +19,22 @@
 						<div class="col-8">
 							<div class="form-group">
 								<label for="youtubeid">Username</label>
-								<form:input class="form-control" path="username" placeholder="Category Id?" />
+								<form:input class="form-control" path="username" placeholder="Usename?" />
 								<small id="youtubeIHid" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
 								<label for="videotitle">Password</label>
-								<form:input class="form-control" path="password" type="password" placeholder="Category password?" />
+								<form:input class="form-control" path="password" type="password" placeholder="Password?" />
 								<small id="videotHid" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
 								<label for="videotitle">Full name</label>
-								<form:input class="form-control" path="fullname" placeholder="Category fullname?" />
+								<form:input class="form-control" path="fullname" placeholder="Fullname?" />
 								<small id="videotHid" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
 								<label for="videotitle">Email</label>
-								<form:input class="form-control" path="email" placeholder="Category email?" />
+								<form:input class="form-control" path="email" placeholder="Email?" />
 								<small id="videotHid" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">

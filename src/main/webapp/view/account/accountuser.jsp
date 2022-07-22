@@ -307,8 +307,7 @@ background-position
 								<div class="card-body">
 									<div class="px-xl-3">
 										<button class="button-85" role="button">
-											<i class="fa fa-sign-out"></i> <a href="/home/index">Đăng
-												Xuất</a>
+											<i class="fa fa-sign-out"></i> <a href="/home/index">Trở Về</a>
 										</button>
 									</div>
 								</div>
